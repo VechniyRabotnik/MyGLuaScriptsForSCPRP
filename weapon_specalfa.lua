@@ -41,6 +41,7 @@ SWEP.Secondary.Automatic 	= false
 
 SWEP.ShouldDropOnDie 		= false
 
+--font
 if CLIENT then
 surface.CreateFont( "alfa", {
     font = "Arial", --  Use the font-name which is shown to you by your operating system Font Viewer, not the file name
@@ -72,7 +73,7 @@ end
 function SWEP:PrimaryAttack()
 end
 
-
+--Invisibility
 function SWEP:SecondaryAttack()
 
     local ply = self:GetOwner()
@@ -85,7 +86,7 @@ function SWEP:SecondaryAttack()
 	        ply:DrawShadow(true)
     	end
 end
-
+--Notification
 hook.Add("HUDPaint", "invisswep.paint", function()
 if not IsValid(LocalPlayer():GetActiveWeapon()) then return end
 if LocalPlayer():GetActiveWeapon():GetClass() ~= "weapon_specalfa" or not LocalPlayer():GetNoDraw() then return end
@@ -109,6 +110,7 @@ end
 function SWEP:DrawWorldModel()
 	self:DestroyShadow(true)
 end
+--DrawHud
 function SWEP:DrawHUD()
 	
 	local Keys = {
