@@ -2,7 +2,7 @@ AddCSLuaFile()
 
 -- SWEP INFO
 SWEP.Author 				= 	"Вечный Работник/Vechniy Rabotnik"
-SWEP.Base 					= 	"weapon_base"
+SWEP.Base 				= 	"weapon_base"
 SWEP.PrintName 				= 	"Устройство невидимости"
 SWEP.Instructions 			= 	""
 SWEP.Category 				=	"OrionRP SWEPS"
@@ -16,21 +16,21 @@ SWEP.SetHoldType 			=	"melee"
 
 SWEP.Weight 				=	5
 SWEP.AutoSwitchTo 			= 	true
-SWEP.AutoSwitchFrom 		= 	false
+SWEP.AutoSwitchFrom 		        = 	false
 
-SWEP.Slot 					=	1
+SWEP.Slot 				=	1
 SWEP.SlotPos 				=	0
 
 SWEP.DrawAmmo				=	false
 SWEP.DrawCrosshair 			=	true
 
 SWEP.Spawnable 				=	true
-SWEP.AdminSpawnable 		= 	true
+SWEP.AdminSpawnable 		        = 	true
 
 
 SWEP.Primary.ClipSize 		= -1
 SWEP.Primary.DefaultClip	= -1
-SWEP.Primary.Ammo 			= "none"
+SWEP.Primary.Ammo 		= "none"
 SWEP.Primary.Automatic 		= false
 
 
