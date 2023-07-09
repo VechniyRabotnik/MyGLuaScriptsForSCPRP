@@ -21,11 +21,11 @@ SWEP.Primary.Delay = 0
 SWEP.lastPrimaryUse = 0
 SWEP.ReloadCooldown = 20
 
-local a = "weapons/scp/131/pisk.wav" -- Локальная переменная для звука
+local a = "weapons/scp/131/pisk.wav" -- Локальная переменная для звука / sound
 
-local cooldownDuration = 5 -- Длительность cooldown в секундах
-local cooldownEndTime = 0 -- Время окончания cooldown
-local drawCooldown = false -- Флаг для отображения cooldown
+local cooldownDuration = 5 -- Длительность cooldown в секундах / cd in sec
+local cooldownEndTime = 0 -- Время окончания cooldown / cd
+local drawCooldown = false -- Флаг для отображения cooldown / flag
 
 function SWEP:Initialize()
     self:SetHoldType(self.HoldType)
