@@ -110,13 +110,3 @@ end
 function SWEP:DrawWorldModel()
 	self:DestroyShadow(true)
 end
---DrawHud
-function SWEP:DrawHUD()
-	
-	local Keys = {
-		['ПКМ'] = {Title = 'Невидимость', text = 'Нажмите для активации' },
-	}
-
-	SCPInfo(Keys)
-
-end
