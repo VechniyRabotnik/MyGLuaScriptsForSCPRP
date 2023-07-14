@@ -1,3 +1,4 @@
+--SWEP Info
 SWEP.Author = "Вечный Работник"
 SWEP.Purpose = ""
 SWEP.Instructions = "ЛКМ - Пискнуть"
@@ -21,12 +22,13 @@ SWEP.Primary.Delay = 0
 SWEP.lastPrimaryUse = 0
 SWEP.ReloadCooldown = 20
 
-local a = "weapons/scp/131/pisk.wav" -- Локальная переменная для звука / sound
+local a = "weapons/scp/131/pisk.wav" -- Локальная переменная для звука / local sound
 
-local cooldownDuration = 5 -- Длительность cooldown в секундах / cd in sec
-local cooldownEndTime = 0 -- Время окончания cooldown / cd
-local drawCooldown = false -- Флаг для отображения cooldown / flag
+local cooldownDuration = 5 -- Длительность cooldown в секундах / CD in sec
+local cooldownEndTime = 0 -- Время окончания cooldown / CD end
+local drawCooldown = false -- Флаг для отображения cooldown / flag for hud CD
 
+--Initialize
 function SWEP:Initialize()
     self:SetHoldType(self.HoldType)
     self:SetWeaponHoldType(self.HoldType)
@@ -35,7 +37,7 @@ function SWEP:Initialize()
         self:CallOnClient("HideViewModel")
     end
 end
-
+-- Deploy
 function SWEP:Deploy()
     if CLIENT then
         self:CallOnClient("HideViewModel")
@@ -47,6 +49,7 @@ function SWEP:HideViewModel()
     self.Owner:GetViewModel():SetRenderMode(RENDERMODE_NONE)
 end
 
+--Sound
 function SWEP:PrimaryAttack()
     if CurTime() < cooldownEndTime then return end
     
@@ -54,7 +57,7 @@ function SWEP:PrimaryAttack()
     cooldownEndTime = CurTime() + cooldownDuration
     drawCooldown = true
 end
-
+--Icons
 if CLIENT then
     local pickIcon = Material("materials/scp/131/131.png")
     function drawSCP131HUD()
@@ -68,7 +71,7 @@ if CLIENT then
         local y = ScrH() - 140
        -- local text = "Писк" -- text here
     
-        -- Отрисовка первой иконки
+        -- Отрисовка первой иконки / Draw Icon
         surface.SetMaterial(pickIcon)
         surface.SetDrawColor(255, 255, 255)
         surface.DrawTexturedRect(x, y, 55, 55)
